@@ -1,29 +1,24 @@
 {
-    "manifest_version": 2,
-    "name": "TwitchClipsDownload",
-    "short_name": "Twitch Clips",
-    "default_locale": "en",
-    "version": "0.0.1",
-    "description": "Download Twitch Clips",
-    "browser_action": {
-        "default_icon": "assets/icon128.png"
-    },
-    "permissions": [
-        "tabs",
-        "https://clips.twitch.tv/*"
-    ],
-    "background": {
-        "scripts": [
-            "background.js"
-        ],
-        "persistent": false
-    },
-    "icons": {
-        "16": "assets/icon16.png",
-        "48": "assets/icon48.png",
-        "128": "assets/icon128.png"
-    },
-    "web_accessible_resources": [
+  "manifest_version": 2,
+  "name": "TwitchClipsDownload",
+  "short_name": "Twitch Clips",
+  "default_locale": "en",
+  "version": "0.0.2",
+  "description": "Download Twitch Clips",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://clips.twitch.tv/*"
+      ],
+      "js": [
         "index.js"
-    ]
+      ],
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  }
 }
